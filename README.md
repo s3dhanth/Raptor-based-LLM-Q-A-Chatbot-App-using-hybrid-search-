@@ -48,4 +48,10 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 - In the text box Enter our query and submit 
 ![minilm](https://github.com/user-attachments/assets/cd40599d-2576-43c2-b099-99b760715919)
 
+## Notebooks overview
+- Raptor_sbert_2dim -   Reduction to 10 Dimensions
+- Raptor_sbert_2dim -   Reduction to 2 Dimensions
+- MiniLMapp - Sentence Transformer model with gradio (jupyter)
+- Sentence_Transformer = For Model testing (use it directly)
+  
 
