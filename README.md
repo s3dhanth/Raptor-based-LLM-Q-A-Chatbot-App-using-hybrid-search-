@@ -37,10 +37,12 @@ run python Sentence_transformer.py (Transformer)
 
 # Gradio Application
 - # run python app.py (llama3.1 embeddings)
-- # run python Sentence_transformers.py (Sentence T model embeddings)
+- # run python Sentence_transformers.py (MiniLM model embeddings)
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 ```
-## Model DEMO 
+## Model (Sentence Transformer MiniLM) 
 - In the text box Enter our query and submit 
-![model_output](https://github.com/user-attachments/assets/9a72b6dc-89ca-4caf-8dbd-283246b1f31f)
+![minilm](https://github.com/user-attachments/assets/cd40599d-2576-43c2-b099-99b760715919)
+
+
