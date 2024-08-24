@@ -53,5 +53,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 - Raptor_sbert_2dim -   Reduction to 2 Dimensions
 - MiniLMapp - Sentence Transformer model with gradio (jupyter)
 - Sentence_Transformer = For Model testing (use it directly)
+- Main.py = For LLama embeddings Model testing (use it directly)
   
 
