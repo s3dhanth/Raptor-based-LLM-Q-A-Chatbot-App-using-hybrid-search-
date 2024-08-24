@@ -14,7 +14,7 @@ This repository contains a Gradio application for an enhanced Raptor Q&A bot tha
 ### Llama3.1 Model Embedding after dimension reduction
 ![image](https://github.com/user-attachments/assets/9d715cba-22b0-4e6c-a3da-01b88dac268a)
   
-### Sentence Transformer Model Embedding after dimension reduction
+### Sentence Transformer (MiniLM) Model Embedding after dimension reduction
 ![image](https://github.com/user-attachments/assets/fb82b515-3bfc-47cb-96fb-21694d65dde1)
 
 
