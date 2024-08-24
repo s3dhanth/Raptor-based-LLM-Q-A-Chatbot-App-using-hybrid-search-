@@ -17,6 +17,9 @@ This repository contains a Gradio application for an enhanced Raptor Q&A bot tha
 ### Sentence Transformer (MiniLM) Model Embedding after dimension reduction
 ![image](https://github.com/user-attachments/assets/fb82b515-3bfc-47cb-96fb-21694d65dde1)
 
+### Hybrid Search with sparse-dense vector
+
+![image](https://github.com/user-attachments/assets/4ad8c914-746a-4072-b1c4-e93a57066a68)
 
 ## Installation
 
