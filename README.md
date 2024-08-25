@@ -28,6 +28,7 @@ This repository contains a Gradio application for an enhanced Raptor Q&A bot tha
 ```sh
 git clone https://github.com/s3dhanth/Raptor-based-LLM-Q-A-Chatbot-App-using-hybrid-search-.git
 
+cd Raptor-based-LLM-Q-A-Chatbot-App-using-hybrid-search-
 sh
 Copy code
 pip install -r requirements.txt
