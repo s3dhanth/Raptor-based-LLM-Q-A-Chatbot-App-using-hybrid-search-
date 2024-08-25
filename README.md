@@ -32,7 +32,7 @@ sh
 Copy code
 pip install -r requirements.txt
 
-# run python main.py(llama3.1)
+run python main.py (llama3.1)
           or
 run python Sentence_transformer.py (Transformer)
 
