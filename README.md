@@ -56,6 +56,7 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## Query vs Expanded Query (Unit Testing)
 - **Query**
 ![image](https://github.com/user-attachments/assets/6cef66d0-f892-4462-b091-03ae6f4b03f4)
+- Model Failed to decode the question
 - **Expanded Query**
 - Original Question(Who is the owner of the dining venue?)
 ![image](https://github.com/user-attachments/assets/42bc3fd5-af7c-4f67-8c8a-1ad0b074c63a)
