@@ -18,7 +18,7 @@ This repository contains a Gradio application for an enhanced Raptor Q&A bot tha
 ![image](https://github.com/user-attachments/assets/fb82b515-3bfc-47cb-96fb-21694d65dde1)
 
 ### Query Expansion (using NLTK and Wordnet)
-- removed Stop words and punct
+- removed Stop words and punctuations
 - Added synonyms using wordnet
 
 ### Hybrid Search with sparse-dense vector
