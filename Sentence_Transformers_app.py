@@ -28,9 +28,16 @@ from Sentence_Transformer import get_retrieval
 combined_texts = get_combined_text
 model1 = ChatOllama(temperature=0, model='llama3.1')
 load_dotenv()
+import nltk
+from nltk.corpus import wordnet
+from main import expand_query
+# Download necessary NLTK data (if not already downloaded)
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 def chatfunction(text_box,history):
 
     querry = text_box
+    querry = expand_query(querry)
     retrieval = get_retrieval()
     
     template = """

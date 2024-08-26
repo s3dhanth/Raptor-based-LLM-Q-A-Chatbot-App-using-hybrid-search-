@@ -22,10 +22,9 @@ import os
 from dotenv import load_dotenv
 import gradio as gr
 from main import get_combined_text
+from main import expand_query
 
 combined_texts = get_combined_text
-
-
 
 model1 = ChatOllama(temperature=0, model='llama3.1')
 api_key = os.getenv("API_KEY")
@@ -35,6 +34,7 @@ bm25encoder = BM25Encoder()
 bm25encoder.fit(combined_texts)
 def chatfunction(text_box,history):
     querry = text_box
+    querry = expand_query(querry)
     index =pc.Index(index_name)
     retriever = PineconeHybridSearchRetriever(
     embeddings= OllamaEmbeddings(model='llama3.1'), sparse_encoder=bm25encoder, index=index,top_k=  165)

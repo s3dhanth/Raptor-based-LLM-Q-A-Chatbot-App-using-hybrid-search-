@@ -21,7 +21,11 @@ from langchain_community.embeddings import OllamaEmbeddings
 import os
 from dotenv import load_dotenv
 from tqdm import tqdm
-
+import nltk
+from nltk.corpus import wordnet
+# Download necessary NLTK data (if not already downloaded)
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 # Load environment variables from .env file
 load_dotenv()
 
@@ -38,6 +42,24 @@ def doc_text_splitter(docs):
     docs = text_splitter.split_documents(docs)
     texts = [doc.page_content for doc in docs]
     return texts
+def expand_query(query):
+    words = query.split()
+    expanded_words = []
+
+    for word in words:
+        synonyms = wordnet.synsets(word)
+        lemmas = set()
+
+        for syn in synonyms:
+            for lemma in syn.lemmas():
+                lemmas.add(lemma.name())
+
+        if lemmas:
+            expanded_words.append(f"({word} OR {' OR '.join(lemmas)})")
+        else:
+            expanded_words.append(word)
+
+    return ' '.join(expanded_words)
 
 def reduce_cluster_embeddings(
     embeddings: np.ndarray,
@@ -107,7 +129,7 @@ def final_summaries(clustered_summaries):
         final_summaries[cluster] = summary
     return final_summaries
 
-def initializing_server(api_key,dense_v_dimension,combined_texts,getembeddings):
+def initializing_server(api_key,combined_texts,getembeddings):
     pc = Pinecone(api_key= api_key)
     index_name = 'sbert-50dim'
 
@@ -199,5 +221,6 @@ rag_chain = (
     | model1
     | StrOutputParser()
 )
-
-rag_chain.invoke("Who is the owner of the restaurant")
+question = input('Enter your query')
+Exp_question = expand_query(question)
+rag_chain.invoke(question)

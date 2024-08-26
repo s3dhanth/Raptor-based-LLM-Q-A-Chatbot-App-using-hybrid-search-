@@ -22,13 +22,36 @@ import os
 from dotenv import load_dotenv
 from tqdm import tqdm
 from langchain_huggingface import HuggingFaceEmbeddings
+import nltk
+from nltk.corpus import wordnet
+
+# Download necessary NLTK data (if not already downloaded)
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 # Load environment variables from .env file
 load_dotenv()
 
 
 loader = DirectoryLoader('data', glob="**/*.txt")
 docs = loader.load()
+def expand_query(query):
+    words = query.split()
+    expanded_words = []
 
+    for word in words:
+        synonyms = wordnet.synsets(word)
+        lemmas = set()
+
+        for syn in synonyms:
+            for lemma in syn.lemmas():
+                lemmas.add(lemma.name())
+
+        if lemmas:
+            expanded_words.append(f"({word} OR {' OR '.join(lemmas)})")
+        else:
+            expanded_words.append(word)
+
+    return ' '.join(expanded_words)
 def doc_text_splitter(docs):
     text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=200,
@@ -210,4 +233,8 @@ rag_chain = (
 )
 def get_retrieval():
     return final
-print(rag_chain.invoke("Who is the owner of the restaurant"))
+
+
+question = input('Enter your query?')
+question = expand_query(question)
+print(rag_chain.invoke(question))
