@@ -17,6 +17,10 @@ This repository contains a Gradio application for an enhanced Raptor Q&A bot tha
 ### Sentence Transformer (MiniLM) Model Embedding after dimension reduction
 ![image](https://github.com/user-attachments/assets/fb82b515-3bfc-47cb-96fb-21694d65dde1)
 
+### Query Expansion (using NLTK and Wordnet)
+- removed Stop words and punct
+- Added synonyms using wordnet
+
 ### Hybrid Search with sparse-dense vector
 
 ![image](https://github.com/user-attachments/assets/4ad8c914-746a-4072-b1c4-e93a57066a68)
@@ -48,6 +52,14 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## Model (Sentence Transformer MiniLM) 
 - In the text box Enter our query and submit 
 ![minilm](https://github.com/user-attachments/assets/cd40599d-2576-43c2-b099-99b760715919)
+
+## Query vs Expanded Query (Unit Testing)
+- **Query**
+![image](https://github.com/user-attachments/assets/6cef66d0-f892-4462-b091-03ae6f4b03f4)
+- **Expanded Query**
+- Original Question(Who is the owner of the dining venue?)
+![image](https://github.com/user-attachments/assets/42bc3fd5-af7c-4f67-8c8a-1ad0b074c63a)
+
 
 ## Notebooks overview
 - Raptor_sbert_2dim -   Reduction to 10 Dimensions
